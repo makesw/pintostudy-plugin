@@ -30,20 +30,6 @@ require_once(ptplg_path . 'lng/lang_en.php');
 	 <h1><strong><?= $_REFINE_SEARCH_PROG ?></strong></h1>
 	 <?php include ptplg_path . 'programs/seccionFiltros.php';?>
 	 <div class="gx-btn-group">
-		<?php /* 
-		foreach ($_SESSION['arrayApp /*iltersValues'] as &$valor) {
-		  if(!empty($valor)){ 
-		      $arrayValor = explode("=", $valor);
-        		if( isset($arrayValor[1]) ) {
-        		*//*?>
-        	  	<a href="javaScript:d*//*eFilter('<?php echo $arrayValor[0];?>','<?php echo $arrayValor[1];?>');" class="gx-btn gx-btn-default gx-btn-shadow btnApplyFilter">
-                    <span><?php echo $arrayValor[1];?></span>
-                    <i class="zmdi zmdi-close zmdi-hc-fw zmdi-hc-lg text-danger"></i>
-                </a>
-        		<?php/* 
-        		}
-		  }
-		}*/ ?>
 		<?php if(!empty($_SESSION['arrayApplyFiltersValues']['searchText'])){?> 
 		    <a href="javaScript:deleteFilter('searchText','');" class="gx-btn gx-btn-default gx-btn-shadow btnApplyFilter">
                     <span><?=$_SESSION['arrayApplyFiltersValues']['searchText'];?></span>

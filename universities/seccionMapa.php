@@ -2,6 +2,9 @@
 require_once(ptplg_path . 'conexion.php');
 /**Declaración de Querys**/
 $queryUniversidades = "SELECT distinct u.* FROM university u WHERE 1 = 1 ";
+if( isset($_SESSION['arrayFiltersUniv'][4]) && !empty($_SESSION['arrayFiltersUniv'][4]) ){
+    $queryUniversidades = "SELECT distinct u.* FROM university u JOIN program p WHERE p.columna_2 = u.columna_2 ";
+}
 /**Fin Declaración de Querys**/
 /**Adición de Filtro iniciales a Querys**/
 for ($i = 0; $i <= count($_SESSION['arrayFiltersUniv']); $i++) {

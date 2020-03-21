@@ -1,4 +1,5 @@
-<?php 
+<?php
+session_start();
 function calcularListaRangoPrecios($queryRngPrecMin,$queryRngPrecMax){ //Cada rango se definió en 5mil USD
     include(ptplg_path . 'conexion.php');
         

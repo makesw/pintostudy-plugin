@@ -33,5 +33,6 @@
     $LOGIN_TEXT_MESSAGE = 'Please register or login for a personalized experience!';
     $BTN_APPLY_PRICE_RANGE = 'Apply';
     $BTN_CLEAR_PRICE_RANGE = 'Clear';
+    $SEARCH_RESULTS_PROG = 'We have found <strong>?</strong> results with some of the search terms.'
     
 ?>

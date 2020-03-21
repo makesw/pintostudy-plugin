@@ -41,8 +41,8 @@ if( isset($_GET['selectFilter'])){
 			</small>
 		</h1>
 	</div>	
-	<div class="col-sm-6" style="margin: auto;">		
-		<img style="max-width: 40%;" src="<?=path_img_log_univ.$university['columna_34'];?>" class="img-fluid">
+	<div class="col-sm-6" style="margin: auto;margin-top: 10px;">		
+		<img style="max-width: 40%;" src="<?=path_img_log_univ.$university['columna_34'].'.png';?>" class="img-fluid">
 	</div>
 </div>
 
@@ -65,7 +65,7 @@ if( isset($_GET['selectFilter'])){
 							<h3 class="font-weight-bold">Type of University: <small> <?php echo $university['columna_7'];?></small></h3>
                             <h3 class="font-weight-bold">Type of Programs: <small> <?php echo $university['columna_8'];?></small></h3>
                             <h3 class="font-weight-bold">Fundation Year: <small> <?php echo $university['columna_9'];?></small></h3>
-                            <h3 class="font-weight-bold">Number of Students: <small> <?php echo $university['columna_14']!=null ? number_format($university['columna_14'],0): ''; ?></small></h3>
+                            <h3 class="font-weight-bold">Number of Students: <small> <?= is_numeric($university['columna_14']) ? number_format($university['columna_14'],0): $university['columna_14']; ?></small></h3>
 						</div>
 						<div class="col-xl-6 col-sm-6 col-12 text-center"">
 							<iframe width="560" height="315"
@@ -108,7 +108,7 @@ if( isset($_GET['selectFilter'])){
                                         <tr
             							class="user-list d-sm-flex">
             							<td scope="col" class="flex-sm-row card"><div class="col-md-2 col-sm-6 col-12 mb-2">
-                                                            <img class="img-fluid rounded" src="<?=path_img_log_univ.$row['logo_universidad'];?>" alt="Up unpacked friendly">
+                                                            <img class="img-fluid rounded" src="<?=path_img_log_univ.$row['logo_universidad'].'.png';?>" alt="Up unpacked friendly">
                                                         </div>
             								<div class="description pl-sm-3">
             									<h3><?php echo $row['columna_2'].' / '.$row['columna_7']; ?></h3>
@@ -121,7 +121,7 @@ if( isset($_GET['selectFilter'])){
                                                 	Tuition Fee: <?php echo '$ '.number_format($row['tuition_fee'],0).' - $ '.number_format(( ($row['tuition_fee']*0.1)+$row['tuition_fee']).$USD,0); ?>
                                                 </p>                    
             									<ul class="list-inline d-sm-flex flex-sm-row gx-btn-list">
-            										<li><a href="<?=ptplg_url?>programs/programDetail.php?prog=<?php echo $row['columna_2'].'&university='. $university['columna_2']; ?>"
+            										<li><a href="./program-detail/?prog=<?=$row['columna_7'].'&university='. $university['columna_2']; ?>"
             											class="gx-btn gx-btn-light-green btnDetail"><?=$_BTN_DETAILS?></a></li>
             									</ul>
             								</div></td>

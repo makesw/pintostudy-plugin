@@ -2,6 +2,9 @@
 define( 'path_img_log_univ', 'https://pintostudy.com/wp-content/uploads/university-logos/');
 /**Declaración de Querys**/
 $queryUniversidades = "SELECT distinct u.* FROM university u WHERE 1 = 1 ";
+if( isset($_SESSION['arrayFiltersUniv'][4]) && !empty($_SESSION['arrayFiltersUniv'][4]) ){
+    $queryUniversidades = "SELECT distinct u.* FROM university u JOIN program p WHERE p.columna_2 = u.columna_2 ";
+}
 /**Fin Declaración de Querys**/
 /**Adición de Filtros Seleccionados a Querys**/
 if(isset($_GET['selectFilter'])){
@@ -19,7 +22,6 @@ $selectFilter='';
 if(isset($_GET['selectFilter'])){
     $selectFilter = '&selectFilter=On';
 }
-
 
 ?>
 <div class="table-responsive">

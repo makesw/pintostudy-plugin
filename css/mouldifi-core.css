@@ -10572,10 +10572,9 @@ ul.attach-file-list li a img {
 .btnApplyFilter{
     text-transform: capitalize;
     color: #5c5c5c !important;
-	background-color: #e8eaf6 !important;
-    border-color: #e8eaf6 !important;
+    border-color: #cecece !important;
 	padding: 3px 3px !important;
-	border-radius: 0px !important;
+	border-radius: 20px !important;
 	margin-bottom: 10px;
 }
 .btnDetail{

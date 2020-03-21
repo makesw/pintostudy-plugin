@@ -59,14 +59,13 @@ $listPrograms = $connect->query($queryPrograms);
 $cantProg = $listPrograms->num_rows;
 /**Fin Ejecución de Querys**/
 
-
 ?>
 <link href="<?=ptplg_url?>css/pintostudy-plugin.css" rel="stylesheet">
 <div class="table-responsive">
 	<table id="dataTable-programs" class="table table-bordered table-hover">
     <thead>
         <tr>
-            <th><h2 class="font-weight-semibold"><?= $cantProg.' '.$_PROGRAMS; ?></h2></th>
+            <th><h2><?=str_replace ( "?" , $cantProg , $SEARCH_RESULTS_PROG );?></h2></th>
         </tr>
     </thead>
 </table>

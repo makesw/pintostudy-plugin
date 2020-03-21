@@ -24,17 +24,18 @@ echo '{
   "draw": ' . $draw . ',
   "recordsTotal": '.$_GET['totalProg'].',
   "recordsFiltered": '.$_GET['totalProg'].',
-  "data": [';
+  "data": ['; 
 $data ='';
 while ($row = mysqli_fetch_array($listPrograms)) {
     $tuitionFee = !empty($row['tuition_year']) ? $row['tuition_year']: $row['tuition_prog'];
+    $search  = array("\n","•	");
     $data.='[[
         "'.path_img_log_univ.$row['logo_universidad'].'.png'.'",
-        "'.str_replace("\n" , " " ,$row['columna_7']).'",
+        "'.str_replace("\n" , " " ,$row['columna_7']).'",   
         "'.str_replace("\n" , " " ,$row['nombre_univ']).'",
         "'.$row['ciudad'].'",
         "'.$row['pais'].'",
-        "'.str_replace ( "\n" , "<br/>" , substr($row['columna_16'],0,200)).'...'.'",
+        "'.str_replace($search, '<br/>', substr($row['columna_16'],0,200)).'...'.'",
         "'.(is_numeric($row['app_fee']) ? '$ '.number_format($row['app_fee'],0) : 'ND').' USD",
         "'.(is_numeric($tuitionFee) ? '$ '.number_format($tuitionFee,0).' - $ '.number_format(( ($tuitionFee*0.1)+$tuitionFee),0): 'ND').' USD"
     ]],';

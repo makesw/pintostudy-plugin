@@ -20,12 +20,14 @@ if($_GET['action']=="ADD" && $_GET['value']!="-1" ){
         
     }else if( $_GET['idFilter']=="filtRngTuitionFee"){
         $rango = explode(",", $_GET['value']);
-        $_SESSION['arrayApplyFilters']['tuitionfee'] = " AND ( (p.columna_14 > ".$rango[0]." AND p.columna_14 < ".$rango[1].") OR ( p.columna_15 > ".$rango[0]." AND p.columna_15 < ".$rango[1].") ) ";
+        $_SESSION['arrayApplyFilters']['tuitionfee'] = " AND ( (p.columna_14 >= ".$rango[0]." AND p.columna_14 <= ".$rango[1].") OR ( p.columna_15 >= ".$rango[0]." AND p.columna_15 <= ".$rango[1].") ) ";
         $_SESSION['arrayApplyFiltersValues']['tuitionfee'] =  $_GET['idFilter'].'=$ '.$_GET['value'];
         
-    }else if( $_GET['idFilter']=="filtCostVida"){
-        $_SESSION['arrayApplyFilters']['costLiving'] = " AND u.columna_24='".$_GET['value']."'";
-        $_SESSION['arrayApplyFiltersValues']['costLiving'] =  $_GET['idFilter'].'='.$_GET['value'];
+    }else if( $_GET['idFilter']=="filtRngCostLiving"){
+        
+        $rango = explode(",", $_GET['value']);
+        $_SESSION['arrayApplyFilters']['costLiving'] = " AND ( u.columna_24 >= ".$rango[0]." AND u.columna_24 <= ".$rango[1]." ) ";
+        $_SESSION['arrayApplyFiltersValues']['costLiving'] =  $_GET['idFilter'].'=$ '.$_GET['value'];
         
     }else if( $_GET['idFilter']=="filtDuracion"){
         $_SESSION['arrayApplyFilters']['durationProg'] = " AND p.columna_10='".$_GET['value']."'";
@@ -39,7 +41,6 @@ if($_GET['action']=="ADD" && $_GET['value']!="-1" ){
         $_SESSION['arrayApplyFilters']['university'] = " AND p.columna_2='".$_GET['value']."'";
         $_SESSION['arrayApplyFiltersValues']['university'] = $_GET['idFilter'].'='.$_GET['value'];
     }
-    
 }else if( $_GET['value']=="-1" ){
     
     if( $_GET['idFilter']=="filtNiveles"){
@@ -59,7 +60,6 @@ if($_GET['action']=="ADD" && $_GET['value']!="-1" ){
         $_SESSION['arrayApplyFiltersValues']['city'] ="";
         
     }else if( $_GET['idFilter']=="filtRngTuitionFee"){
-        $rango = explode(",", $_GET['value']);
         $_SESSION['arrayApplyFilters']['tuitionfee'] ="";
         $_SESSION['arrayApplyFiltersValues']['tuitionfee'] ="";
         

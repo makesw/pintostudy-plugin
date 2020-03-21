@@ -36,7 +36,7 @@ $diciplinas = $connect->query("SELECT DISTINCT columna_5 from program");
 // Consultar Lugares:
 $lugares = $connect->query("SELECT DISTINCT columna_1 from program");
 //contar totalidad de programas:
-$cantPrograms = mysqli_fetch_array($connect->query("SELECT COUNT(1) total from program"));
+//$cantPrograms = mysqli_fetch_array($connect->query("SELECT COUNT(1) total from program"));
 ?>
 <!-- material-design-iconic-font stylesheet -->
 <link href="<?=ptplg_url?>fonts/material-design-iconic-font/css/material-design-iconic-font.min.css" rel="stylesheet">
@@ -63,7 +63,7 @@ $cantPrograms = mysqli_fetch_array($connect->query("SELECT COUNT(1) total from p
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="zmdi back-img-level"></i></div>
                                 </div>															
-							<select id="filtNiveles" class="form-control selectpicker" multiple name="filtNiveles[]" required
+							<select id="filtNiveles" class="form-control selectpicker" multiple name="filtNiveles[]"
 								data-live-search="false" data-iconBase="fa" data-tickIcon="fa-check" data-none-selected-text title="Please Select...">								
 								<?php 
 								   while ( $row = mysqli_fetch_array( $niveles ) ) {
@@ -81,7 +81,7 @@ $cantPrograms = mysqli_fetch_array($connect->query("SELECT COUNT(1) total from p
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="zmdi back-img-discip"></i></div>
                                 </div>								
-							<select id="filtDiciplinas" class="form-control selectpicker" multiple name="filtDiciplinas[]" required
+							<select id="filtDiciplinas" class="form-control selectpicker" multiple name="filtDiciplinas[]"
 								data-live-search="false" title="Please Select...">
 								<?php 
 								   while ( $row = mysqli_fetch_array( $diciplinas ) ) {
@@ -99,7 +99,7 @@ $cantPrograms = mysqli_fetch_array($connect->query("SELECT COUNT(1) total from p
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="zmdi back-img-location"></i></div>
                                 </div>	
-							<select id="filtLugares" class="form-control selectpicker" multiple multiple name="filtLugares[]" required
+							<select id="filtLugares" class="form-control selectpicker" multiple multiple name="filtLugares[]"
 								data-live-search="false" title="Please Select...">
 								<?php 
 								   while ( $row = mysqli_fetch_array( $lugares ) ) {
