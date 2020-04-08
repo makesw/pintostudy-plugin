@@ -8,7 +8,7 @@
     $_PROGRAMS = 'Programs';
     $_UNIVERSITIES = 'Universities';
     $_BTN_DETAILS = 'See Details';
-    $_UNIVERSITY = 'Univirsitie';
+    $_UNIVERSITY = 'Univirsity';
     $_LEVEL = 'Level';
     $_DISCIPLINE = 'Discipline';
     $COUNTRY = 'Country';
